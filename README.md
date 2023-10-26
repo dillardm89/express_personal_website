@@ -27,4 +27,3 @@ Technical Requirements:
 
 Personal Challenge Goals:
 - Style website similar to personal WordPress website (https://www.mariannedillard.com)
-- Fork HTML-only resume repo and update with CSS styling for this project
