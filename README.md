@@ -1,7 +1,7 @@
 # css_website
 
 Project Specifications:
-- Create a personal website using HTML and CSS only
+- Create a personal website using HTML and CSS/Bootstrap only
 - Website should include relevant information for each of the sections listed in "Features" below
 - Website should be visually appealing and easy to navigate
 - Add website to your GitHub to continue building portfolio
