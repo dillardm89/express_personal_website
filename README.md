@@ -26,4 +26,4 @@ Technical Requirements:
 - All images used in the website should have appropriate alt text to be accessible
 
 Personal Challenge Goals:
-- Style website similar to personal WordPress website (https://www.mariannedillard.com)
+- Recreate styling as similar to personal WordPress website (https://www.mariannedillard.com) without using JavaScript
