@@ -1,0 +1,52 @@
+h2 {
+  font-weight: 600;
+  font-style: bold;
+}
+
+#prof-summary-card {
+  background-color: #f7fbfc;
+  border-radius: 50px;
+}
+
+#resume-img-card img {
+  border: solid 10px #333333;
+  border-radius: 50px;
+}
+
+#resume-hero,
+#work-experience,
+#credentials {
+  background-color: #769fcd;
+}
+
+.dark-btn {
+  background-color: #b9d7ea !important;
+}
+
+.dark-btn:hover {
+  background-color: #d6e6f2 !important;
+}
+
+.card {
+  background-color: #f7fcfb;
+  border: none;
+}
+
+.comp-list,
+.tech-list {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.comp-list li:before,
+.tech-list li:before {
+  content: '</>';
+  color: #769fcd;
+  padding-right: 5px;
+}
+
+.exp-list {
+  text-align: left;
+}
