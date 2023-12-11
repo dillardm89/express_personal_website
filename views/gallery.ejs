@@ -4,13 +4,11 @@
 
   <body>
     <header id="navigation">
-      <%- include('includes/navbar') %>
-      <br />
-      <%- include('includes/slides') %>
+      <%- include('includes/navbar') %> <%- include('includes/slides') %>
     </header>
 
     <section id="gallery-hero">
-      <div class="container mb-4 p-5 text-center" id="gallery-hero-container">
+      <div class="container mt-3 mb-5 text-center" id="gallery-hero-container">
         <h2>Gallery</h2>
         <p>
           One of my hobbies and joys of life is traveling to experience new
@@ -22,11 +20,11 @@
     </section>
 
     <section id="gallery-cards">
-      <%# Loop to show 9 gallery cards by date %>
-      <br />
-      <%- include('includes/gallery-card', {image: image}) %>
-      <br />
-      <%# Code for gallery pagination %>
+      <% for (const image of images) { %> <% if (image.id <= 9) { %>
+      <div id="gallery-card-item">
+        <%- include('includes/gallery-card-item', {image: image}) %>
+      </div>
+      <% } %> <% } %>
     </section>
 
     <%- include('includes/menu', { section: 'gallery' }) %>

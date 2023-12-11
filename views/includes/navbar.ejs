@@ -1,13 +1,10 @@
-<nav
-  class="navbar fixed-top navbar-expand-lg"
-  style="background-color: #d6e6f2"
->
+<nav id="my-navbar" class="navbar fixed-top navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand" href="/" target="_blank">
       <img
         src="images/MD-logo-square.jpg"
         alt="marianne dillard logo image"
-        width="50px"
+        width="60px"
       />
     </a>
     <button
@@ -54,3 +51,16 @@
     </div>
   </div>
 </nav>
+<script>
+  const myNav = document.getElementById('my-navbar')
+  window.onscroll = function () {
+    if (
+      document.body.scrollTop >= 5 ||
+      document.documentElement.scrollTop >= 5
+    ) {
+      myNav.setAttribute('style', 'background-color:#d6e6f2 !important')
+    } else {
+      myNav.setAttribute('style', 'background-color: transparent')
+    }
+  }
+</script>
