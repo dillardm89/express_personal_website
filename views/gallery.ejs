@@ -4,7 +4,9 @@
 
   <body>
     <header id="navigation">
-      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+      <%- include('includes/navbar') %>
+      <br />
+      <%- include('includes/slides') %>
     </header>
 
     <section id="gallery-hero">
@@ -19,7 +21,18 @@
       </div>
     </section>
 
-    <%- include('includes/menu') %> <%- include('includes/connect') %> <%-
-    include('includes/foot') %>
+    <section id="gallery-cards">
+      <%# Loop to show 9 gallery cards by date %>
+      <br />
+      <%- include('includes/gallery-card', {image: image}) %>
+      <br />
+      <%# Code for gallery pagination %>
+    </section>
+
+    <%- include('includes/menu', { section: 'gallery' }) %>
+    <br />
+    <%- include('includes/connect') %>
+    <br />
+    <%- include('includes/foot') %>
   </body>
 </html>

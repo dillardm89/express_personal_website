@@ -77,6 +77,14 @@ a {
   border-radius: 50px;
 }
 
+.hide-menu-item {
+  display: none;
+}
+
+#recent-blog-posts {
+  background-color: #b9d7ea;
+}
+
 #menu {
   background-color: #769fcd;
 }
@@ -87,7 +95,13 @@ a {
 
 .fa-user-large:hover,
 .fa-file-lines:hover,
-.fa-book:hover {
+.fa-book:hover,
+.fa-file-code:hover,
+.fa-camera:hover {
+  color: #333333 !important;
+}
+
+#menu-envelope:hover {
   color: #333333 !important;
 }
 
@@ -113,7 +127,10 @@ a {
 }
 
 .fa-map:hover,
-.fa-envelope:hover,
 .fa-brands:hover {
+  color: #769fcd !important;
+}
+
+#connect-envelope:hover {
   color: #769fcd !important;
 }
