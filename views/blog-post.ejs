@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: blog.title }) %>
+
+  <body>
+    <header id="navigation">
+      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+    </header>
+
+    <section id="blog-post">
+      <%# Code for previous and next blog by date at bottom %>
+    </section>
+
+    <%- include('includes/menu', { section: 'blog-post' }) %>
+    <br />
+    <%- include('includes/connect') %>
+    <br />
+    <%- include('includes/foot') %>
+  </body>
+</html>
