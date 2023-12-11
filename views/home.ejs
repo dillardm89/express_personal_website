@@ -44,15 +44,17 @@
       </div>
     </section>
 
-    <%- include('includes/menu', { section: section }) %>
+    <%- include('includes/menu', { section: 'home' }) %>
 
-    <section id="recent-blog-post-cards">
-      <h2>Recent Blog Posts</h2>
-      <%# Loop to load the 3 most recent blog post cards by date %>
-      <br />
-      <%- include('includes/blog-card', { blog: blog }) %>
-      <div class="text-center">
-        <a class="btn light-btn" href="/blog">READ MORE BLOG POSTS</a>
+    <section id="recent-blog-posts">
+      <div class="container pt-5 pb-5 text-center" id="recent-blog-containter">
+        <h2>Recent Blog Posts</h2>
+        <%# Loop to load the 3 most recent blog post cards by date %>
+        <br />
+        <%- include('includes/blog-card', { blog: 'blog' }) %>
+        <div class="text-center">
+          <a class="btn light-btn" href="/blog">READ MORE BLOG POSTS</a>
+        </div>
       </div>
     </section>
 

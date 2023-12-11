@@ -1,8 +1,8 @@
 <section class="p-4" id="menu">
   <div class="container mx-auto" id="menu-container">
-    <div class="row row-gap-3 row-flex justify-content-center">
+    <div class="row row-gap-3 row-flex justify-content-around">
       <div class="<%= section == 'about' ? 'hide-menu-item' : '' %>">
-        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+        <div class="col-lg-2 col-md-6 col-sm-8 text-center">
           <div class="card pb-2" id="about-me-card">
             <a class="mt-2" href="/about-me">
               <span class="fa-stack fa-2x">
@@ -26,7 +26,7 @@
       </div>
 
       <div class="<%= section == 'resume' ? 'hide-menu-item' : '' %>">
-        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+        <div class="col-lg-2 col-md-6 col-sm-8 text-center">
           <div class="card pb-2" id="resume-card">
             <a class="mt-2" href="/resume">
               <span class="fa-stack fa-2x">
@@ -50,9 +50,9 @@
       </div>
 
       <div class="<%= section == 'blog' ? 'hide-menu-item' : '' %>">
-        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+        <div class="col-lg-2 col-md-6 col-sm-8 text-center">
           <div class="card pb-2" id="blog-card">
-            <a class="mt-2" href="https://www.mariannedillard.com/blog">
+            <a class="mt-2" href="/blog">
               <span class="fa-stack fa-2x">
                 <i
                   class="fa-regular fa-circle fa-stack-2x"
@@ -74,7 +74,7 @@
       </div>
 
       <div class="<%= section == 'project' ? 'hide-menu-item' : '' %>">
-        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+        <div class="col-lg-2 col-md-6 col-sm-8 text-center">
           <div class="card pb-2" id="about-me-card">
             <a class="mt-2" href="https://www.github.com/dillardm89">
               <span class="fa-stack fa-2x">
@@ -98,7 +98,7 @@
       </div>
 
       <div class="<%= section == 'gallery' ? 'hide-menu-item' : '' %>">
-        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+        <div class="col-lg-2 col-md-6 col-sm-8 text-center">
           <div class="card pb-2" id="about-me-card">
             <a class="mt-2" href="/gallery">
               <span class="fa-stack fa-2x">
@@ -107,7 +107,7 @@
                   style="color: #769fcd"
                 ></i>
                 <i
-                  class="fa-solid fa-user-camera fa-stack-1x fa-inverse"
+                  class="fa-solid fa-camera fa-stack-1x fa-inverse"
                   style="color: #769fcd"
                 ></i>
               </span>
@@ -121,8 +121,8 @@
         </div>
       </div>
 
-      <div class="<%= section == 'project' ? 'hide-menu-item' : '' %>">
-        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+      <div class="<%= section == 'contact' ? 'hide-menu-item' : '' %>">
+        <div class="col-lg-2 col-md-6 col-sm-8 text-center">
           <div class="card pb-2" id="about-me-card">
             <a class="mt-2" href="/contact-me">
               <span class="fa-stack fa-2x">
@@ -133,6 +133,7 @@
                 <i
                   class="fa-regular fa-envelope fa-stack-1x fa-inverse"
                   style="color: #769fcd"
+                  id="menu-envelope"
                 ></i>
               </span>
             </a>

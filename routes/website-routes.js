@@ -5,32 +5,30 @@ const galleryController = require('../controllers/gallery-controllers')
 
 const router = express.Router()
 
-router.get('/', blogController.getRecentBlogs)
+router.get('/', function (req, res) {
+  res.render('home')
+})
+
+//router.get('/', blogController.getRecentBlogs)
 
 router.get('/about-me', function (req, res) {
-  res.render('about-me', {
-    section: 'about',
-  })
+  res.render('about-me')
 })
 
 router.get('/resume', function (req, res) {
-  res.render('resume', {
-    section: 'resume',
-  })
+  res.render('resume')
 })
 
-router.get('/gallery', galleryController.getAllImages)
+//router.get('/gallery', galleryController.getAllImages)
 
 router.get('/contact-me', function (req, res) {
-  res.render('contact-me', {
-    section: 'contact',
-  })
+  res.render('contact-me')
 })
 
-router.get('/blog', blogController.getAllBlogs)
+//router.get('/blog', blogController.getAllBlogs)
 
-router.get('/:blogTitle', blogController.getBlogDetails)
+//router.get('/:blogTitle', blogController.getBlogDetails)
 
-router.get('/?s=:searchId', blogController.searchBlogByKeyword)
+//router.get('/?s=:searchId', blogController.searchBlogByKeyword)
 
 module.exports = router
