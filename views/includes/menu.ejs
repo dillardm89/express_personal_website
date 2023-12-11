@@ -1,68 +1,146 @@
 <section class="p-4" id="menu">
   <div class="container mx-auto" id="menu-container">
     <div class="row row-gap-3 row-flex justify-content-center">
-      <div class="col-lg-3 col-md-6 col-sm-8 text-center">
-        <div class="card pb-2" id="about-me-card">
-          <a class="mt-2" href="./public/about-me.html">
-            <span class="fa-stack fa-2x">
-              <i
-                class="fa-regular fa-circle fa-stack-2x"
-                style="color: #769fcd"
-              ></i>
-              <i
-                class="fa-solid fa-user-large fa-stack-1x fa-inverse"
-                style="color: #769fcd"
-              ></i>
-            </span>
-          </a>
+      <div class="<%= section == 'about' ? 'hide-menu-item' : '' %>">
+        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+          <div class="card pb-2" id="about-me-card">
+            <a class="mt-2" href="/about-me">
+              <span class="fa-stack fa-2x">
+                <i
+                  class="fa-regular fa-circle fa-stack-2x"
+                  style="color: #769fcd"
+                ></i>
+                <i
+                  class="fa-solid fa-user-large fa-stack-1x fa-inverse"
+                  style="color: #769fcd"
+                ></i>
+              </span>
+            </a>
 
-          <div class="card-body pb-0">
-            <h4 class="card-title">ABOUT ME</h4>
-            <p class="card-text">Learn more about my story.</p>
+            <div class="card-body pb-0">
+              <h4 class="card-title">ABOUT ME</h4>
+              <p class="card-text">Learn more about my story.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 col-sm-8 text-center">
-        <div class="card pb-2" id="resume-card">
-          <a class="mt-2" href="./public/resume.html">
-            <span class="fa-stack fa-2x">
-              <i
-                class="fa-regular fa-circle fa-stack-2x"
-                style="color: #769fcd"
-              ></i>
-              <i
-                class="fa-regular fa-file-lines fa-stack-1x fa-inverse"
-                style="color: #769fcd"
-              ></i>
-            </span>
-          </a>
+      <div class="<%= section == 'resume' ? 'hide-menu-item' : '' %>">
+        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+          <div class="card pb-2" id="resume-card">
+            <a class="mt-2" href="/resume">
+              <span class="fa-stack fa-2x">
+                <i
+                  class="fa-regular fa-circle fa-stack-2x"
+                  style="color: #769fcd"
+                ></i>
+                <i
+                  class="fa-regular fa-file-lines fa-stack-1x fa-inverse"
+                  style="color: #769fcd"
+                ></i>
+              </span>
+            </a>
 
-          <div class="card-body pb-0">
-            <h4 class="card-title">RESUME</h4>
-            <p class="card-text">View and download my CV.</p>
+            <div class="card-body pb-0">
+              <h4 class="card-title">RESUME</h4>
+              <p class="card-text">View and download my CV.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 col-sm-8 text-center">
-        <div class="card pb-2" id="blog-card">
-          <a class="mt-2" href="https://www.mariannedillard.com/blog">
-            <span class="fa-stack fa-2x">
-              <i
-                class="fa-regular fa-circle fa-stack-2x"
-                style="color: #769fcd"
-              ></i>
-              <i
-                class="fa-solid fa-book fa-stack-1x fa-inverse"
-                style="color: #769fcd"
-              ></i>
-            </span>
-          </a>
+      <div class="<%= section == 'blog' ? 'hide-menu-item' : '' %>">
+        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+          <div class="card pb-2" id="blog-card">
+            <a class="mt-2" href="https://www.mariannedillard.com/blog">
+              <span class="fa-stack fa-2x">
+                <i
+                  class="fa-regular fa-circle fa-stack-2x"
+                  style="color: #769fcd"
+                ></i>
+                <i
+                  class="fa-solid fa-book fa-stack-1x fa-inverse"
+                  style="color: #769fcd"
+                ></i>
+              </span>
+            </a>
 
-          <div class="card-body pb-0">
-            <h4 class="card-title">BLOG</h4>
-            <p class="card-text">Read interesting posts.</p>
+            <div class="card-body pb-0">
+              <h4 class="card-title">BLOG</h4>
+              <p class="card-text">Read interesting posts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="<%= section == 'project' ? 'hide-menu-item' : '' %>">
+        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+          <div class="card pb-2" id="about-me-card">
+            <a class="mt-2" href="https://www.github.com/dillardm89">
+              <span class="fa-stack fa-2x">
+                <i
+                  class="fa-regular fa-circle fa-stack-2x"
+                  style="color: #769fcd"
+                ></i>
+                <i
+                  class="fa-regular fa-file-code fa-stack-1x fa-inverse"
+                  style="color: #769fcd"
+                ></i>
+              </span>
+            </a>
+
+            <div class="card-body pb-0">
+              <h4 class="card-title">PROJECTS</h4>
+              <p class="card-text">View some of my portfolio projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="<%= section == 'gallery' ? 'hide-menu-item' : '' %>">
+        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+          <div class="card pb-2" id="about-me-card">
+            <a class="mt-2" href="/gallery">
+              <span class="fa-stack fa-2x">
+                <i
+                  class="fa-regular fa-circle fa-stack-2x"
+                  style="color: #769fcd"
+                ></i>
+                <i
+                  class="fa-solid fa-user-camera fa-stack-1x fa-inverse"
+                  style="color: #769fcd"
+                ></i>
+              </span>
+            </a>
+
+            <div class="card-body pb-0">
+              <h4 class="card-title">GALLERY</h4>
+              <p class="card-text">Enjoy pictures from my travels.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="<%= section == 'project' ? 'hide-menu-item' : '' %>">
+        <div class="col-lg-3 col-md-6 col-sm-8 text-center">
+          <div class="card pb-2" id="about-me-card">
+            <a class="mt-2" href="/contact-me">
+              <span class="fa-stack fa-2x">
+                <i
+                  class="fa-regular fa-circle fa-stack-2x"
+                  style="color: #769fcd"
+                ></i>
+                <i
+                  class="fa-regular fa-envelope fa-stack-1x fa-inverse"
+                  style="color: #769fcd"
+                ></i>
+              </span>
+            </a>
+
+            <div class="card-body pb-0">
+              <h4 class="card-title">CONTACT ME</h4>
+              <p class="card-text">Send me a message.</p>
+            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,9 @@
 
   <body>
     <header id="navigation">
-      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+      <%- include('includes/navbar') %>
+      <br />
+      <%- include('includes/slides') %>
     </header>
 
     <section id="resume-hero">
@@ -511,7 +513,10 @@
       </div>
     </section>
 
-    <%- include('includes/menu') %> <%- include('includes/connect') %> <%-
-    include('includes/foot') %>
+    <%- include('includes/menu', { section: section }) %>
+    <br />
+    <%- include('includes/connect') %>
+    <br />
+    <%- include('includes/foot') %>
   </body>
 </html>

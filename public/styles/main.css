@@ -77,6 +77,10 @@ a {
   border-radius: 50px;
 }
 
+.hide-menu-item {
+  display: none;
+}
+
 #menu {
   background-color: #769fcd;
 }

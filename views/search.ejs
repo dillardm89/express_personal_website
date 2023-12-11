@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('includes/head', { pageTitle: 'Page Not Found' }) %>
+  <%- include('includes/head', { pageTitle: pageTitle }) %>
 
   <body>
     <header id="navigation">
@@ -9,13 +9,13 @@
       <%- include('includes/slides') %>
     </header>
 
-    <section id="404-container">
-      <h3>404</h3>
-      <p>Page Not Found</p>
+    <section id="search-results-cards">
+      <%# Loop through search results by keywords %>
       <br />
+      <%- include('includes/search-card', { result: result }) %>
     </section>
 
-    <%- include('includes/menu') %>
+    <%- include('includes/menu', { section: section }) %>
     <br />
     <%- include('includes/connect') %>
     <br />

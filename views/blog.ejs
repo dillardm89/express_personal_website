@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: 'Blog - Marianne Dillard' }) %>
+
+  <body>
+    <header id="navigation">
+      <%- include('includes/navbar') %>
+      <br />
+      <%- include('includes/slides') %>
+    </header>
+
+    <section id="blog-hero">
+      <div class="container mb-4 p-5 text-center" id="blog-hero-container">
+        <h2>Blog</h2>
+        <p>
+          I have a passion for business and providing innovative solutions
+          through strong leadership, analysis, communication, and teamwork. I
+          enjoy making a difference by providing customer value through
+          continuous improvement and a growth mindset. Check back often for the
+          latest posts covering a range of topics including data analytics,
+          business intelligence, project management, and software development.
+        </p>
+        <br />
+        <%- include('includes/search-bar') %>
+      </div>
+    </section>
+
+    <section id="all-blog-post-cards">
+      <h2>Recent Blog Posts</h2>
+      <%# Loop to all blog post cards by date %>
+      <br />
+      <%- include('includes/blog-card', { blog: blog }) %>
+    </section>
+
+    <%- include('includes/menu', { section: section }) %>
+    <br />
+    <%- include('includes/connect') %>
+    <br />
+    <%- include('includes/foot') %>
+  </body>
+</html>

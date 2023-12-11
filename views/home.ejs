@@ -44,7 +44,20 @@
       </div>
     </section>
 
-    <%- include('includes/menu') %> <%- include('includes/connect') %> <%-
-    include('includes/foot') %>
+    <%- include('includes/menu', { section: section }) %>
+
+    <section id="recent-blog-post-cards">
+      <h2>Recent Blog Posts</h2>
+      <%# Loop to load the 3 most recent blog post cards by date %>
+      <br />
+      <%- include('includes/blog-card', { blog: blog }) %>
+      <div class="text-center">
+        <a class="btn light-btn" href="/blog">READ MORE BLOG POSTS</a>
+      </div>
+    </section>
+
+    <%- include('includes/connect') %>
+    <br />
+    <%- include('includes/foot') %>
   </body>
 </html>
