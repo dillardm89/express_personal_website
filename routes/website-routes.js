@@ -1,7 +1,7 @@
 const express = require('express')
 const { render } = require('ejs')
 const blogController = require('../controllers/blog-controllers')
-const galleryController = require('../controllers/gallery-controllers')
+const data = require('../files/images.json')
 
 const router = express.Router()
 
@@ -20,9 +20,10 @@ router.get('/resume', function (req, res) {
 })
 
 router.get('/gallery', function (req, res) {
-  res.render('gallery')
+  const images = data['images']
+
+  res.render('gallery', { images: images })
 })
-//router.get('/gallery', galleryController.getAllImages)
 
 router.get('/contact-me', function (req, res) {
   res.render('contact-me')
