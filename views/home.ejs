@@ -53,10 +53,15 @@
     <section id="recent-blog-posts">
       <div class="container pt-5 pb-5 text-center" id="recent-blog-containter">
         <h2>Recent Blog Posts</h2>
-        <%# Loop to load the 3 most recent blog post cards by date %>
-        <br />
-        <%- include('includes/blog-card', { blog: 'blog' }) %>
-        <div class="text-center">
+
+        <%# for (const blog of blogs) { if (blog.id > (blog.length - 3)) { %>
+        <div id="blog-card" class="row row-gap-3 row-flex">
+          <%- include('includes/blog-card') %> <%#-
+          include('includes/blog-card', { blog: 'blog' }) %>
+        </div>
+        <%# }} %>
+
+        <div class="text-center mt-5">
           <a class="btn light-btn" href="/blog">READ MORE BLOG POSTS</a>
         </div>
       </div>

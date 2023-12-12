@@ -23,10 +23,14 @@
       </div>
     </section>
 
-    <section id="all-blog-post-cards">
-      <%# Loop to all blog post cards by date %>
-      <br />
-      <%- include('includes/blog-card') %>
+    <section class="container" id="all-blog-post-cards">
+      <%# for (const blog of blogs) { %>
+      <div id="blog-card" class="row row-gap-3 row-flex">
+        <%- include('includes/blog-card') %>
+        <br />
+        <%#- include('includes/blog-card', { blog: 'blog' }) %>
+      </div>
+      <%# } %>
     </section>
 
     <%- include('includes/menu', { section: 'blog' }) %>

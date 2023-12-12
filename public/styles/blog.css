@@ -10,3 +10,11 @@
 .form-outline {
   width: 80%;
 }
+
+#blog-card-item {
+  height: 100%;
+}
+
+#blog-card-item a:hover {
+  color: orange;
+}
