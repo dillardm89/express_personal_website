@@ -6,10 +6,6 @@ const apiKey = process.env.WEB3_FORM_API_KEY
 
 const router = express.Router()
 
-//router.get('/', function (req, res) {
-//  res.render('home')
-//})
-
 router.get('/', blogController.getRecentBlogs)
 
 router.get('/about-me', function (req, res) {
@@ -30,12 +26,9 @@ router.get('/contact-me', function (req, res) {
   res.render('contact-me', { apiKey: apiKey })
 })
 
-router.get('/blog', function (req, res) {
-  res.render('blog')
-})
-//router.get('/blog', blogController.getAllBlogs)
+router.get('/blog', blogController.getAllBlogs)
 
-//router.get('/:blogTitle', blogController.getBlogDetails)
+router.get('/:blogTitle', blogController.getBlogDetails)
 
 //router.get('/?s=:searchId', blogController.searchBlogByKeyword)
 

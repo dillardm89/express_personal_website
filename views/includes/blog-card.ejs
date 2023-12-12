@@ -8,17 +8,17 @@
     />
     <div class="card-body">
       <h4 class="card-title">
-        <a class="card-link" href="/<%= blog.title %>">
+        <a class="card-link" href="/<%= blog.urlTitle %>">
           <strong><%= blog.title %></strong>
         </a>
       </h4>
 
       <p class="card-subtitle">
-        <em>by <%= blog.author %> on <%= blog.date %></em>
+        <em>by <%= blog.author %> on <%= blog.shortDate %></em>
       </p>
       <p class="card-text"><%= blog.excerpt %></p>
 
-      <a class="card-link" href="/<%= blog.title %>">
+      <a class="card-link" href="/<%= blog.urlTitle %>">
         Read More <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
