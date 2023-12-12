@@ -24,10 +24,9 @@
     </section>
 
     <section id="all-blog-post-cards">
-      <h2>Recent Blog Posts</h2>
       <%# Loop to all blog post cards by date %>
       <br />
-      <%- include('includes/blog-card', { blog: blog }) %>
+      <%- include('includes/blog-card') %>
     </section>
 
     <%- include('includes/menu', { section: 'blog' }) %>
