@@ -24,13 +24,11 @@
     </section>
 
     <section class="container" id="all-blog-post-cards">
-      <%# for (const blog of blogs) { %>
+      <% for (const blog of blogs) { %>
       <div id="blog-card" class="row row-gap-3 row-flex">
-        <%- include('includes/blog-card') %>
-        <br />
-        <%#- include('includes/blog-card', { blog: 'blog' }) %>
+        <%- include('includes/blog-card', { blog: blog }) %>
       </div>
-      <%# } %>
+      <% } %>
     </section>
 
     <%- include('includes/menu', { section: 'blog' }) %>
