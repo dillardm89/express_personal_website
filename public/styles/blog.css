@@ -1,0 +1,12 @@
+#blog-hero p {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#search-bar {
+  justify-content: center;
+}
+
+.form-outline {
+  width: 80%;
+}
