@@ -2,86 +2,23 @@
   <div id="blog-card-item" class="card">
     <img
       class="img-card-top"
-      src="/blog-images/Post 14 Photo_Edited.jpg"
-      alt="header image"
+      src="<%= blog.imageUrl %>"
+      alt="<%= blog.imageText %>"
+      width="100%"
     />
     <div class="card-body">
       <h4 class="card-title">
-        <a class="card-link" href="/blog-title">
-          <strong>Blog Title</strong>
+        <a class="card-link" href="/<%= blog.urlTitle %>">
+          <strong><%= blog.title %></strong>
         </a>
       </h4>
 
       <p class="card-subtitle">
-        <em>by Marianne Dillard on Dec 11</em>
+        <em>by <%= blog.author %> on <%= blog.shortDate %></em>
       </p>
-      <p class="card-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit molestiae
-        temporibus modi animi veritatis, ipsum velit quas odio vitae accusantium
-        ullam perferendis sunt voluptates incidunt?
-      </p>
+      <p class="card-text"><%= blog.excerpt %></p>
 
-      <a class="card-link" href="/blog-title">
-        Read More <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-6 col-sm-8">
-  <div id="blog-card-item" class="card">
-    <img
-      class="img-card-top"
-      src="/blog-images/Post 15 Photo_Edited.jpg"
-      alt="header image"
-    />
-    <div class="card-body">
-      <h4 class="card-title">
-        <a class="card-link" href="/blog-title">
-          <strong>Blog Title</strong>
-        </a>
-      </h4>
-
-      <p class="card-subtitle">
-        <em>by Marianne Dillard on Dec 11</em>
-      </p>
-      <p class="card-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit molestiae
-        temporibus modi animi veritatis, ipsum velit quas odio vitae accusantium
-        ullam perferendis sunt voluptates incidunt?
-      </p>
-
-      <a class="card-link" href="/blog-title">
-        Read More <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-6 col-sm-8">
-  <div id="blog-card-item" class="card">
-    <img
-      class="img-card-top"
-      src="/blog-images/Post 16 Photo_Edited.jpg"
-      alt="header image"
-    />
-    <div class="card-body">
-      <h4 class="card-title">
-        <a class="card-link" href="/blog-title">
-          <strong>Blog Title</strong>
-        </a>
-      </h4>
-
-      <p class="card-subtitle">
-        <em>by Marianne Dillard on Dec 11</em>
-      </p>
-      <p class="card-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit molestiae
-        temporibus modi animi veritatis, ipsum velit quas odio vitae accusantium
-        ullam perferendis sunt voluptates incidunt?
-      </p>
-
-      <a class="card-link" href="/blog-title">
+      <a class="card-link" href="/<%= blog.urlTitle %>">
         Read More <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
