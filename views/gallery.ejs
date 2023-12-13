@@ -24,6 +24,10 @@
       include('includes/gallery-card-item', {image: image}) %> <% } %>
     </section>
 
+    <section id="paginate-bar">
+      <%- include('includes/gallery-paginate') %>
+    </section>
+
     <%- include('includes/menu', { section: 'gallery' }) %>
     <br />
     <%- include('includes/connect') %>

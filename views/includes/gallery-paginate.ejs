@@ -1,0 +1,22 @@
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item <%= currentPageNum == 1 ? 'disabled' : '' %>">
+      <a class="page-link" href="/gallery-<%= prevPageNum %>">Previous</a>
+    </li>
+
+    <% if (maxPageNum <= 10) { %> <% for(var i = 1; i <= maxPageNum; i++ ) { %>
+    <li class="page-item <%= currentPageNum == i ? 'active' : '' %>">
+      <a class="page-link" href="/gallery-<%= i %>"><%= i %></a>
+    </li>
+    <% } %> <% } else { %> <% for(var i = currentPageNum; i <= (currentPageNum +
+    10); i++ ) { %> <% while (i <= maxPageNum) { %>
+    <li class="page-item <%= currentPageNum == i ? 'active' : '' %>">
+      <a class="page-link" href="/gallery-<%= i %>"><%= i %></a>
+    </li>
+    <% } %> <% } %> <% } %>
+
+    <li class="page-item <%= currentPageNum == maxPageNum ? 'disabled' : '' %>">
+      <a class="page-link" href="/gallery-<%= nextPageNum %>">Next</a>
+    </li>
+  </ul>
+</nav>

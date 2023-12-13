@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb')
 const { type } = require('os')
+const { nextTick } = require('process')
 
 const url = 'mongodb://localhost:27017'
 const client = new MongoClient(url)
@@ -27,7 +28,7 @@ async function getImagesCount() {
 }
 
 async function getImagesByPageNum(req, res, next) {
-  pageNum = req.params.pageNum
+  const pageNum = req.params.pageNum
 
   try {
     if (pageNum < 1) {
@@ -35,6 +36,8 @@ async function getImagesByPageNum(req, res, next) {
       res.render('404')
       return
     }
+
+    const prevPageNum = pageNum - 1
 
     const totalImages = await getImagesCount()
 
@@ -46,6 +49,8 @@ async function getImagesByPageNum(req, res, next) {
       res.render('404')
       return
     }
+
+    const nextPageNum = prevPageNum + 2
 
     let connect = await client.connect()
     let pageImages = await connect
@@ -60,6 +65,10 @@ async function getImagesByPageNum(req, res, next) {
     console.log(`Found ${pageImages.length} Gallery Images.`)
     res.render('gallery', {
       images: pageImages,
+      currentPageNum: pageNum,
+      nextPageNum: nextPageNum,
+      prevPageNum: prevPageNum,
+      maxPageNum: maxValidPageNum,
     })
   } catch (error) {
     console.log(error)
