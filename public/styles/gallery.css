@@ -47,3 +47,12 @@
 #gallery-card-item:hover #gallery-card-overlay {
   opacity: 1;
 }
+
+.gallery-paginate-link {
+  font-size: 1.25rem;
+  margin: 0 5px 0 5px;
+}
+
+.gallery-paginate-link.active {
+  background-color: #b9d7ea;
+}

@@ -18,7 +18,7 @@ async function getImagesCount() {
       .collection(collection)
       .countDocuments()
 
-    console.log(`Found ${totalNumImages} Gallery Images.`)
+    //console.log(`Found ${totalNumImages} Gallery Images.`)
     return totalNumImages
   } catch (error) {
     console.log(error)
@@ -42,7 +42,7 @@ async function getImagesByPageNum(req, res, next) {
     const totalImages = await getImagesCount()
 
     const maxValidPageNum = Math.ceil(totalImages / imgPerPage)
-    console.log(`Max valid page numbers is: ${maxValidPageNum}`)
+    //console.log(`Max valid page numbers is: ${maxValidPageNum}`)
 
     if (pageNum > maxValidPageNum) {
       console.log('Not a valid page number')
@@ -62,7 +62,7 @@ async function getImagesByPageNum(req, res, next) {
       .limit(imgPerPage)
       .toArray()
 
-    console.log(`Found ${pageImages.length} Gallery Images.`)
+    //console.log(`Found ${pageImages.length} Gallery Images.`)
     res.render('gallery', {
       images: pageImages,
       currentPageNum: pageNum,

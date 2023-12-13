@@ -1,22 +1,28 @@
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item <%= currentPageNum == 1 ? 'disabled' : '' %>">
-      <a class="page-link" href="/gallery-<%= prevPageNum %>">Previous</a>
-    </li>
+<div class="row row-gap-3 justify-content-center">
+  <a
+    href="/gallery-<%= prevPageNum %>"
+    class="col btn gallery-paginate-link <%= currentPageNum == 1 ? 'disabled' : '' %>"
+    >Previous</a
+  >
 
-    <% if (maxPageNum <= 10) { %> <% for(var i = 1; i <= maxPageNum; i++ ) { %>
-    <li class="page-item <%= currentPageNum == i ? 'active' : '' %>">
-      <a class="page-link" href="/gallery-<%= i %>"><%= i %></a>
-    </li>
-    <% } %> <% } else { %> <% for(var i = currentPageNum; i <= (currentPageNum +
-    10); i++ ) { %> <% while (i <= maxPageNum) { %>
-    <li class="page-item <%= currentPageNum == i ? 'active' : '' %>">
-      <a class="page-link" href="/gallery-<%= i %>"><%= i %></a>
-    </li>
-    <% } %> <% } %> <% } %>
+  <% if (maxPageNum <= 10) { %> <% for(var i = 1; i <= maxPageNum; i++ ) { %>
+  <a
+    href="/gallery-<%= i %>"
+    class="col btn gallery-paginate-link <%= currentPageNum == i ? 'active' : 'solid-btn' %>"
+    ><%= i %></a
+  >
+  <% } %> <% } else { %> <% for(var i = currentPageNum; i <= (currentPageNum +
+  10); i++ ) { %> <% while (i <= maxPageNum) { %>
+  <a
+    href="/gallery-<%= i %>"
+    class="col gallery-paginate-link <%= currentPageNum == i ? 'active' : 'solid-btn' %>"
+    ><%= i %>
+  </a>
+  <% } %> <% } %> <% } %>
 
-    <li class="page-item <%= currentPageNum == maxPageNum ? 'disabled' : '' %>">
-      <a class="page-link" href="/gallery-<%= nextPageNum %>">Next</a>
-    </li>
-  </ul>
-</nav>
+  <a
+    href="/gallery-<%= nextPageNum %>"
+    class="col btn gallery-paginate-link <%= currentPageNum == maxPageNum ? 'disabled' : '' %>"
+    >Next</a
+  >
+</div>

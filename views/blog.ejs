@@ -30,10 +30,14 @@
       </div>
     </section>
 
-    <%- include('includes/menu', { section: 'blog' }) %>
-    <br />
-    <%- include('includes/connect') %>
-    <br />
+    <section class="p-4" id="menu">
+      <%- include('includes/menu', { section: 'blog' }) %>
+    </section>
+
+    <section class="pt-5" id="contact-me">
+      <%- include('includes/connect') %>
+    </section>
+
     <%- include('includes/foot') %>
   </body>
 </html>
