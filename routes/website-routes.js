@@ -1,7 +1,7 @@
 const express = require('express')
 const { render } = require('ejs')
 const blogController = require('../controllers/blog-controllers')
-const data = require('../files/images.json')
+const galleryController = require('../controllers/gallery-controllers')
 const apiKey = process.env.WEB3_FORM_API_KEY
 
 const router = express.Router()
@@ -16,15 +16,11 @@ router.get('/resume', function (req, res) {
   res.render('resume')
 })
 
-router.get('/gallery', function (req, res) {
-  const images = data['images']
-
-  res.render('gallery', { images: images })
-})
-
 router.get('/contact-me', function (req, res) {
   res.render('contact-me', { apiKey: apiKey })
 })
+
+router.get('/gallery-:pageNum', galleryController.getImagesByPageNum)
 
 router.get('/blog', blogController.getAllBlogs)
 

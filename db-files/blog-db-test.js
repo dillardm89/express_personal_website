@@ -61,4 +61,7 @@ async function getBlogDetails() {
   }
 }
 
-getBlogDetails()
+//Test functions
+//getAllBlogs()
+//getRecentBlogs()
+//getBlogDetails()
