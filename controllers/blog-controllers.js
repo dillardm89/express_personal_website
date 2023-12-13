@@ -57,6 +57,12 @@ async function getBlogDetails(req, res, next) {
       .collection(collection)
       .findOne({ urlTitle: req.params.blogTitle })
 
+    if (!specificBlogPost) {
+      console.log('Not a valid blog post title')
+      res.render('404')
+      return
+    }
+
     console.log(`Found ${specificBlogPost.author} Blog Post.`)
     res.render('blog-post', {
       blog: specificBlogPost,

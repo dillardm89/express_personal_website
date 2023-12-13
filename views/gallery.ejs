@@ -20,11 +20,12 @@
     </section>
 
     <section id="gallery-cards">
-      <% for (const image of images) { if (image.id <= 9) { %>
-      <div id="gallery-card-item">
-        <%- include('includes/gallery-card-item', {image: image}) %>
-      </div>
-      <% }} %>
+      <% for (const image of images) { %> <%-
+      include('includes/gallery-card-item', {image: image}) %> <% } %>
+    </section>
+
+    <section id="paginate-bar">
+      <%- include('includes/gallery-paginate') %>
     </section>
 
     <%- include('includes/menu', { section: 'gallery' }) %>

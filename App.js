@@ -23,7 +23,7 @@ app.use(websiteRoutes)
 //Route error handling
 app.use(function (error, req, res, next) {
   console.log(error)
-  res.status(404).render('404')
+  res.render('404')
 })
 
 //Express server
