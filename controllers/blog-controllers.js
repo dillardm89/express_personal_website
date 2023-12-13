@@ -14,7 +14,7 @@ async function getAllBlogs(req, res, next) {
       .find()
       .toArray()
 
-    console.log(`Found ${allBlogPosts.length} Blog Posts.`)
+    //console.log(`Found ${allBlogPosts.length} Blog Posts.`)
     res.render('blog', {
       blogs: allBlogPosts,
     })
@@ -37,10 +37,31 @@ async function getRecentBlogs(req, res, next) {
       .limit(3)
       .toArray()
 
-    console.log(`Found ${recentBlogPosts.length} Recent Blog Posts.`)
+    //console.log(`Found ${recentBlogPosts.length} Recent Blog Posts.`)
     res.render('home', {
       blogs: recentBlogPosts,
     })
+  } catch (error) {
+    console.log(error)
+    return next(error)
+  } finally {
+    await client.close()
+  }
+}
+
+async function getAdjacentBlog(id) {
+  try {
+    let connect = await client.connect()
+    let adjacentBlogDetails = await connect
+      .db(database)
+      .collection(collection)
+      .findOne({ id: id }, { id: 1, title: 1, urlTitle: 1 })
+
+    if (!adjacentBlogDetails) {
+      adjacentBlogDetails = null
+    }
+
+    return adjacentBlogDetails
   } catch (error) {
     console.log(error)
     return next(error)
@@ -63,9 +84,25 @@ async function getBlogDetails(req, res, next) {
       return
     }
 
-    console.log(`Found ${specificBlogPost.author} Blog Post.`)
+    //console.log(`Found ${specificBlogPost.author} Blog Post.`)
+
+    const blogTextString = specificBlogPost.text.join(' ')
+
+    if (specificBlogPost.id == 1) {
+      const prevBlogDetails = null
+    }
+
+    const prevBlogId = specificBlogPost.id - 1
+    const prevBlogDetails = await getAdjacentBlog(prevBlogId)
+
+    const nextBlogId = specificBlogPost.id + 1
+    const nextBlogDetails = await getAdjacentBlog(nextBlogId)
+
     res.render('blog-post', {
       blog: specificBlogPost,
+      blogText: blogTextString,
+      prevBlog: prevBlogDetails,
+      nextBlog: nextBlogDetails,
     })
   } catch (error) {
     console.log(error)

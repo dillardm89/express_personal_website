@@ -16,11 +16,16 @@
       <p class="card-subtitle">
         <em>by <%= blog.author %> on <%= blog.shortDate %></em>
       </p>
-      <p class="card-text"><%= blog.excerpt %></p>
 
-      <a class="card-link" href="/<%= blog.urlTitle %>">
-        Read More <i class="fa-solid fa-arrow-right"></i>
-      </a>
+      <div class="blog-card-text-div">
+        <p class="card-text"><%= blog.excerpt %></p>
+      </div>
+
+      <div class="card-read-more">
+        <a class="card-link" href="/<%= blog.urlTitle %>">
+          Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
   </div>
 </div>
