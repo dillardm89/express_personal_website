@@ -49,6 +49,10 @@
   padding: 30px;
 }
 
+#blog-post-text h4 {
+  font-weight: bold;
+}
+
 #blog-post-img {
   width: 100%;
   height: 70vh;
