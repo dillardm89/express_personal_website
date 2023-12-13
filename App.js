@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const dotenv = require('dotenv').config()
 const websiteRoutes = require('./routes/website-routes.js')
-const port = process.env.HOST_PORT
+const port = process.env.local.HOST_PORT
 
 //Set up express server
 const app = express()
