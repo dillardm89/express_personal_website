@@ -2,7 +2,7 @@ const express = require('express')
 const { render } = require('ejs')
 const blogController = require('../controllers/blog-controllers')
 const galleryController = require('../controllers/gallery-controllers')
-const apiKey = process.env.WEB3_FORM_API_KEY
+const apiKey = process.env.local.WEB3_FORM_API_KEY
 
 const router = express.Router()
 
