@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb')
 
-const url = 'mongodb://localhost:27017'
-const client = new MongoClient(url)
+const uri = 'mongodb://localhost:27017'
+const client = new MongoClient(uri)
 const database = 'blogs'
 const collection = 'posts'
 
@@ -113,9 +113,9 @@ async function getBlogDetails(req, res, next) {
   }
 }
 
-async function searchBlogByKeyword(req, res, next) {
+async function searchBlogs(req, res, next) {
   try {
-    const searchPhrase = req.params.searchText
+    const searchPhrase = req.query.s
 
     let connect = await client.connect()
     let searchResults = await connect
@@ -131,15 +131,16 @@ async function searchBlogByKeyword(req, res, next) {
       .toArray()
 
     if (!searchResults || searchResults.length == 0) {
-      results = null
+      searchResults = null
       pageTitle = `No results found for "${searchPhrase}`
       totalResults = 0
+      //console.log(`Found ${totalResults} Matching Blog Posts.`)
     } else {
       totalResults = searchResults.length
       pageTitle = `${totalResults} Search Results for "${searchPhrase}"`
+      //console.log(`Found ${totalResults} Matching Blog Posts.`)
     }
 
-    //console.log(`Found ${searchResults.length} Matching Blog Posts.`)
     res.render('search', {
       results: searchResults,
       pageTitle: pageTitle,
@@ -155,6 +156,6 @@ async function searchBlogByKeyword(req, res, next) {
 module.exports = {
   getBlogDetails,
   getAllBlogs,
-  searchBlogByKeyword,
+  searchBlogs,
   getRecentBlogs,
 }

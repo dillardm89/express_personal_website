@@ -1,5 +1,4 @@
 const express = require('express')
-const { render } = require('ejs')
 const blogController = require('../controllers/blog-controllers')
 const galleryController = require('../controllers/gallery-controllers')
 const apiKey = process.env.WEB3_FORM_API_KEY
@@ -20,12 +19,12 @@ router.get('/contact-me', function (req, res) {
   res.render('contact-me', { apiKey: apiKey })
 })
 
+router.get('/search', blogController.searchBlogs)
+
 router.get('/gallery-:pageNum', galleryController.getImagesByPageNum)
 
 router.get('/blog', blogController.getAllBlogs)
 
 router.get('/:blogTitle', blogController.getBlogDetails)
-
-router.get('/?s=:searchText', blogController.searchBlogByKeyword)
 
 module.exports = router

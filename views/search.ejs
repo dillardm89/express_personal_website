@@ -8,9 +8,15 @@
     </header>
 
     <section class="container mb-4" id="search-results">
+      <div class="pt-5 pb-2 text-center">
+        <h2><%= pageTitle %></h2>
+        <br />
+        <%- include('includes/search-bar') %>
+      </div>
+
       <div id="search-card">
-        <% for (const result of results) { %> <%-
-        include('includes/search-card', { result: result }) %> <% } %>
+        <% if (results !== null) { %> <% for (const result of results) { %> <%-
+        include('includes/search-card', { result: result }) %> <% } %> <% } %>
       </div>
     </section>
 
