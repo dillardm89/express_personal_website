@@ -61,7 +61,34 @@ async function getBlogDetails() {
   }
 }
 
+async function searchBlogByKeyword(req, res, next) {
+  try {
+    const searchPhrase = 'data+analytics'
+
+    let connect = await client.connect()
+    let searchResults = await connect
+      .db(database)
+      .collection(collection)
+      .find({
+        $text: {
+          $search: searchPhrase,
+          $caseSensitive: false,
+        },
+      })
+      .sort({ date: -1 })
+      .toArray()
+
+    console.log(`Found ${searchResults.length} Matching Blog Posts.`)
+  } catch (error) {
+    console.log(error)
+    return next(error)
+  } finally {
+    await client.close()
+  }
+}
+
 //Test functions
 //getAllBlogs()
 //getRecentBlogs()
 //getBlogDetails()
+//searchBlogByKeyword()

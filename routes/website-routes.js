@@ -26,6 +26,6 @@ router.get('/blog', blogController.getAllBlogs)
 
 router.get('/:blogTitle', blogController.getBlogDetails)
 
-//router.get('/?s=:searchId', blogController.searchBlogByKeyword)
+router.get('/?s=:searchText', blogController.searchBlogByKeyword)
 
 module.exports = router

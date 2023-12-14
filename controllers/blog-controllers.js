@@ -12,6 +12,7 @@ async function getAllBlogs(req, res, next) {
       .db(database)
       .collection(collection)
       .find()
+      .sort({ date: -1 })
       .toArray()
 
     //console.log(`Found ${allBlogPosts.length} Blog Posts.`)
@@ -33,7 +34,7 @@ async function getRecentBlogs(req, res, next) {
       .db(database)
       .collection(collection)
       .find()
-      .sort({ id: -1 })
+      .sort({ date: -1 })
       .limit(3)
       .toArray()
 
@@ -114,14 +115,34 @@ async function getBlogDetails(req, res, next) {
 
 async function searchBlogByKeyword(req, res, next) {
   try {
-    const searchPhrase = 'pass search phrase here'
-    const searchResults = await posts
-      .find({ description: { $regex: searchPhrase } })
+    const searchPhrase = req.params.searchText
+
+    let connect = await client.connect()
+    let searchResults = await connect
+      .db(database)
+      .collection(collection)
+      .find({
+        $text: {
+          $search: searchPhrase,
+          $caseSensitive: false,
+        },
+      })
       .sort({ date: -1 })
-    console.log(`Found ${searchResults.length} Blog Posts.`)
+      .toArray()
+
+    if (!searchResults || searchResults.length == 0) {
+      results = null
+      pageTitle = `No results found for "${searchPhrase}`
+      totalResults = 0
+    } else {
+      totalResults = searchResults.length
+      pageTitle = `${totalResults} Search Results for "${searchPhrase}"`
+    }
+
+    //console.log(`Found ${searchResults.length} Matching Blog Posts.`)
     res.render('search', {
       results: searchResults,
-      pageTitle: `Search Results for "${searchPhrase}"`,
+      pageTitle: pageTitle,
     })
   } catch (error) {
     console.log(error)

@@ -20,7 +20,8 @@
   object-fit: fill;
 }
 
-#blog-card-item a:hover {
+#blog-card-item a:hover,
+#search-card-item a:hover {
   color: orange;
 }
 
@@ -68,6 +69,7 @@
   white-space: nowrap;
 }
 
-.blog-paginate-link a:hover {
+.blog-paginate-link a:hover,
+.search-paginate-link a:hover {
   color: orange;
 }

@@ -1,0 +1,28 @@
+<div class="row row-gap-3 justify-content-center">
+  <a
+    href="/gallery-<%= prevPageNum %>"
+    class="col btn search-paginate-link <%= currentPageNum == 1 ? 'disabled' : '' %>"
+    >Previous</a
+  >
+
+  <% if (maxPageNum <= 10) { %> <% for(var i = 1; i <= maxPageNum; i++ ) { %>
+  <a
+    href="/gallery-<%= i %>"
+    class="col btn search-paginate-link <%= currentPageNum == i ? 'active' : 'solid-btn' %>"
+    ><%= i %></a
+  >
+  <% } %> <% } else { %> <% for(var i = currentPageNum; i <= (currentPageNum +
+  10); i++ ) { %> <% while (i <= maxPageNum) { %>
+  <a
+    href="/gallery-<%= i %>"
+    class="col search-paginate-link <%= currentPageNum == i ? 'active' : 'solid-btn' %>"
+    ><%= i %>
+  </a>
+  <% } %> <% } %> <% } %>
+
+  <a
+    href="/gallery-<%= nextPageNum %>"
+    class="col btn search-paginate-link <%= currentPageNum == maxPageNum ? 'disabled' : '' %>"
+    >Next</a
+  >
+</div>
