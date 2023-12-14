@@ -113,49 +113,8 @@ async function getBlogDetails(req, res, next) {
   }
 }
 
-async function searchBlogs(req, res, next) {
-  try {
-    const searchPhrase = req.query.s
-
-    let connect = await client.connect()
-    let searchResults = await connect
-      .db(database)
-      .collection(collection)
-      .find({
-        $text: {
-          $search: searchPhrase,
-          $caseSensitive: false,
-        },
-      })
-      .sort({ date: -1 })
-      .toArray()
-
-    if (!searchResults || searchResults.length == 0) {
-      searchResults = null
-      pageTitle = `No results found for "${searchPhrase}`
-      totalResults = 0
-      //console.log(`Found ${totalResults} Matching Blog Posts.`)
-    } else {
-      totalResults = searchResults.length
-      pageTitle = `${totalResults} Search Results for "${searchPhrase}"`
-      //console.log(`Found ${totalResults} Matching Blog Posts.`)
-    }
-
-    res.render('search', {
-      results: searchResults,
-      pageTitle: pageTitle,
-    })
-  } catch (error) {
-    console.log(error)
-    return next(error)
-  } finally {
-    await client.close()
-  }
-}
-
 module.exports = {
   getBlogDetails,
   getAllBlogs,
-  searchBlogs,
   getRecentBlogs,
 }

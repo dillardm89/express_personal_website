@@ -1,28 +1,33 @@
 <div class="row row-gap-3 justify-content-center">
   <a
-    href="/gallery-<%= prevPageNum %>"
-    class="col btn search-paginate-link <%= currentPageNum == 1 ? 'disabled' : '' %>"
-    >Previous</a
+    href="<%= prevPage %>"
+    class="col btn search-paginate-link <%= currentPage == 1 ? 'disabled' : '' %>"
   >
+    Previous
+  </a>
 
-  <% if (maxPageNum <= 10) { %> <% for(var i = 1; i <= maxPageNum; i++ ) { %>
+  <% if (maxNumPages <= 10) { %> <% for(var i = 1; i <= maxNumPages; i++ ) { %>
   <a
-    href="/gallery-<%= i %>"
-    class="col btn search-paginate-link <%= currentPageNum == i ? 'active' : 'solid-btn' %>"
-    ><%= i %></a
+    href="/search/page-<%= i %>/<%= req.query.s %>"
+    class="col btn search-paginate-link <%= currentPage == i ? 'active' : 'solid-btn' %>"
   >
-  <% } %> <% } else { %> <% for(var i = currentPageNum; i <= (currentPageNum +
-  10); i++ ) { %> <% while (i <= maxPageNum) { %>
+    <%= i %>
+  </a>
+
+  <% } %> <% } else { %> <% for(var i = currentPage; i <= (currentPage + 10);
+  i++ ) { %> <% while (i <= maxNumPages) { %>
   <a
-    href="/gallery-<%= i %>"
-    class="col search-paginate-link <%= currentPageNum == i ? 'active' : 'solid-btn' %>"
-    ><%= i %>
+    href="/search/page-<%= i %>/<%= req.query.s %>"
+    class="col search-paginate-link <%= currentPage == i ? 'active' : 'solid-btn' %>"
+  >
+    <%= i %>
   </a>
   <% } %> <% } %> <% } %>
 
   <a
-    href="/gallery-<%= nextPageNum %>"
-    class="col btn search-paginate-link <%= currentPageNum == maxPageNum ? 'disabled' : '' %>"
-    >Next</a
+    href="<%= nextPage %>"
+    class="col btn search-paginate-link <%= currentPage == maxNumPages ? 'disabled' : '' %>"
   >
+    Next
+  </a>
 </div>
