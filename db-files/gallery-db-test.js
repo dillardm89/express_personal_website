@@ -1,11 +1,13 @@
 const { MongoClient } = require('mongodb')
-
 const url = 'mongodb://localhost:27017'
 const client = new MongoClient(url)
-
 const database = 'gallery'
 const collection = 'images'
 
+/**
+ * Test function to retrieve all images from db
+ * @returns {Array}
+ */
 async function getAllImages() {
   try {
     let connect = await client.connect()
@@ -23,6 +25,10 @@ async function getAllImages() {
   }
 }
 
+/**
+ * Test function to get count of images in db
+ * @returns {Int} totalNumImages
+ */
 async function getImagesCount() {
   try {
     let connect = await client.connect()
@@ -40,6 +46,13 @@ async function getImagesCount() {
   }
 }
 
+/**
+ * Test function to retrieve specific number of images
+ * ordered by date from db based on selected page number
+ * @param {Int} pageNum
+ * @param {Int} imgPerPage
+ * @returns {Array} pageImages
+ */
 async function getImagesByPageNum(pageNum, imgPerPage) {
   try {
     let connect = await client.connect()
@@ -61,7 +74,7 @@ async function getImagesByPageNum(pageNum, imgPerPage) {
   }
 }
 
-//Test functions
+//Call test functions
 //getAllImages()
 //getImagesCount()
 //getImagesByPageNum(2, 9)

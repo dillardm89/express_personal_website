@@ -1,11 +1,13 @@
 const { MongoClient } = require('mongodb')
-
 const url = 'mongodb://localhost:27017'
 const client = new MongoClient(url)
-
 const database = 'blogs'
 const collection = 'posts'
 
+/**
+ * Test function to retrieve all blog posts from db
+ * @returns {Array} allBlogPosts
+ */
 async function getAllBlogs() {
   try {
     let connect = await client.connect()
@@ -23,6 +25,10 @@ async function getAllBlogs() {
   }
 }
 
+/**
+ * Test function to retrieve 3 most recent blog posts by date from db
+ * @returns {Array} recentBlogPosts
+ */
 async function getRecentBlogs() {
   try {
     let connect = await client.connect()
@@ -42,6 +48,10 @@ async function getRecentBlogs() {
   }
 }
 
+/**
+ * Test function to retrieve specific blog post details by title from db
+ * @returns {Object} specificBlogPost
+ */
 async function getBlogDetails() {
   try {
     let connect = await client.connect()
@@ -61,10 +71,14 @@ async function getBlogDetails() {
   }
 }
 
+/**
+ * Test function to search all blog posts in db matching keyword string
+ * @returns {Array} searchResults
+ */
 async function searchBlogByKeyword(req, res, next) {
-  try {
-    const searchPhrase = 'data+analytics'
+  const searchPhrase = 'data+analytics'
 
+  try {
     let connect = await client.connect()
     let searchResults = await connect
       .db(database)
@@ -87,7 +101,7 @@ async function searchBlogByKeyword(req, res, next) {
   }
 }
 
-//Test functions
+//Call test functions
 //getAllBlogs()
 //getRecentBlogs()
 //getBlogDetails()

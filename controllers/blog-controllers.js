@@ -1,10 +1,16 @@
 const { MongoClient } = require('mongodb')
-
 const uri = 'mongodb://localhost:27017'
 const client = new MongoClient(uri)
 const database = 'blogs'
 const collection = 'posts'
 
+/**
+ * Retrieves all blog posts from db then renders blog.ejs
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Array} allBlogPosts
+ */
 async function getAllBlogs(req, res, next) {
   try {
     let connect = await client.connect()
@@ -27,6 +33,13 @@ async function getAllBlogs(req, res, next) {
   }
 }
 
+/**
+ * Retrieves 3 most recent blog posts by date from db then renders home.ejs
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Array} recentBlogPosts
+ */
 async function getRecentBlogs(req, res, next) {
   try {
     let connect = await client.connect()
@@ -50,6 +63,13 @@ async function getRecentBlogs(req, res, next) {
   }
 }
 
+/**
+ * Retrieves previous or next blog posts by id from db for pagination
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Object} adjacentBlogDetails
+ */
 async function getAdjacentBlog(id) {
   try {
     let connect = await client.connect()
@@ -71,6 +91,13 @@ async function getAdjacentBlog(id) {
   }
 }
 
+/**
+ * Retrieves details for specific blog post by title from db then renders blog-post.ejs
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Object} specificBlogPost
+ */
 async function getBlogDetails(req, res, next) {
   try {
     let connect = await client.connect()
@@ -79,20 +106,26 @@ async function getBlogDetails(req, res, next) {
       .collection(collection)
       .findOne({ urlTitle: req.params.blogTitle })
 
+    //Renders to 404.ejs if no matching blog post found
     if (!specificBlogPost) {
-      console.log('Not a valid blog post title')
+      //console.log('Not a valid blog post title')
       res.render('404')
       return
     }
 
     //console.log(`Found ${specificBlogPost.author} Blog Post.`)
 
+    // Converts array of blog body text to single string
     const blogTextString = specificBlogPost.text.join(' ')
 
     if (specificBlogPost.id == 1) {
       const prevBlogDetails = null
     }
 
+    /* Determine previous and next blog post by id
+    then call 'getAdjacentBlog' function to get details
+    for each used in pagination
+    */
     const prevBlogId = specificBlogPost.id - 1
     const prevBlogDetails = await getAdjacentBlog(prevBlogId)
 

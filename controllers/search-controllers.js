@@ -1,10 +1,17 @@
 const { MongoClient } = require('mongodb')
-
 const uri = 'mongodb://localhost:27017'
 const client = new MongoClient(uri)
 const database = 'blogs'
 const collection = 'posts'
 
+/**
+ * Searches all blog posts in db for matches based on query text string
+ * then renders search.ejs
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.NextFunction} next
+ * @returns {Array} searchResults
+ */
 async function searchBlogs(req, res, next) {
   const searchPhrase = req.query.s
 
