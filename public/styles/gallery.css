@@ -48,9 +48,13 @@
   opacity: 1;
 }
 
+#gallery-paginate-bar {
+  display: flex;
+  gap: 10px;
+}
+
 .gallery-paginate-link {
-  font-size: 1.25rem;
-  margin: 0 5px 0 5px;
+  padding: 5px 15px 5px 15px;
 }
 
 .gallery-paginate-link.active {
