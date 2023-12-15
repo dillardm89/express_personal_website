@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb')
 
-const url = 'mongodb://localhost:27017'
-const client = new MongoClient(url)
+const uri = 'mongodb://localhost:27017'
+const client = new MongoClient(uri)
 const database = 'blogs'
 const collection = 'posts'
 
@@ -12,6 +12,7 @@ async function getAllBlogs(req, res, next) {
       .db(database)
       .collection(collection)
       .find()
+      .sort({ date: -1 })
       .toArray()
 
     //console.log(`Found ${allBlogPosts.length} Blog Posts.`)
@@ -33,7 +34,7 @@ async function getRecentBlogs(req, res, next) {
       .db(database)
       .collection(collection)
       .find()
-      .sort({ id: -1 })
+      .sort({ date: -1 })
       .limit(3)
       .toArray()
 
@@ -112,28 +113,8 @@ async function getBlogDetails(req, res, next) {
   }
 }
 
-async function searchBlogByKeyword(req, res, next) {
-  try {
-    const searchPhrase = 'pass search phrase here'
-    const searchResults = await posts
-      .find({ description: { $regex: searchPhrase } })
-      .sort({ date: -1 })
-    console.log(`Found ${searchResults.length} Blog Posts.`)
-    res.render('search', {
-      results: searchResults,
-      pageTitle: `Search Results for "${searchPhrase}"`,
-    })
-  } catch (error) {
-    console.log(error)
-    return next(error)
-  } finally {
-    await client.close()
-  }
-}
-
 module.exports = {
   getBlogDetails,
   getAllBlogs,
-  searchBlogByKeyword,
   getRecentBlogs,
 }

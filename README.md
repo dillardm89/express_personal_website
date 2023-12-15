@@ -3,18 +3,22 @@
 Project Specifications:
 
 - Clone css_website repo
-- Update existing pages (Home, About Me, Resume) using JS, Node.js, Express.js, and EJS
+- Update existing pages (Home, About Me, Resume) using EJS, Express.js, and Node.js
 - Expand website adding new Gallery, Contact Form, and Blog pages
+- Update Home page with Most Recent Blogs section
 - Add website to GitHub to continue building portfolio
 
 Technical Requirements:
 
-- All code (HTML, CSS, JS) should be valid and follow best practices for naming conventions, syntax, format, etc
+- All code should be valid and follow best practices for naming conventions, syntax, format, etc
 - The website should be responsive and work on different screen sizes and devices
 - All images used in the website should have appropriate alt text to be accessible
-- Utilize JS for flip-card functionality on Gallery pages
-- Find and utilize free contact form to email API for Contact page
-- Set up and utilize database for Blog page
+- Utilize free contact form to email API for Contact page
+- Utilize MongoDB for Gallery and Blog
+- Gallery should include pagination (limit 9 images per page)
+- Viewing individual blog post should include pagination for previous and next blogs
+- Blogs should be searchable by keywords
+- Blog Search page should include pagination (limit 10 results per page)
 
 Personal Challenge Goals:
 
