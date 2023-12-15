@@ -22,8 +22,6 @@ router.get('/contact-me', function (req, res) {
 
 router.get('/search', searchController.searchBlogs)
 
-router.get('/search/page-:pageNum', searchController.searchMoreBlogs)
-
 router.get('/gallery-:pageNum', galleryController.getImagesByPageNum)
 
 router.get('/blog', blogController.getAllBlogs)
