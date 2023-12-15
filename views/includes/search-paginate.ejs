@@ -1,33 +1,61 @@
-<div class="row row-gap-3 justify-content-center">
+<div
+  class="justify-content-center search-paginate-container <%= maxNumPages == 1 ? 'hidden' : '' %>"
+>
+  <% if (currentPage == 1) { %>
+  <a href="" class="hidden"></a>
+  <% } else { %>
   <a
-    href="<%= prevPage %>"
-    class="col btn search-paginate-link <%= currentPage == 1 ? 'disabled' : '' %>"
+    href="/search/page-<%= currentPage - 1 %>/?s=<%= searchPhrase %>"
+    class="btn search-paginate-link solid-btn"
+    >Previous</a
   >
-    Previous
-  </a>
-
-  <% if (maxNumPages <= 10) { %> <% for(var i = 1; i <= maxNumPages; i++ ) { %>
-  <a
-    href="/search/page-<%= i %>/<%= req.query.s %>"
-    class="col btn search-paginate-link <%= currentPage == i ? 'active' : 'solid-btn' %>"
-  >
-    <%= i %>
-  </a>
-
-  <% } %> <% } else { %> <% for(var i = currentPage; i <= (currentPage + 10);
-  i++ ) { %> <% while (i <= maxNumPages) { %>
-  <a
-    href="/search/page-<%= i %>/<%= req.query.s %>"
-    class="col search-paginate-link <%= currentPage == i ? 'active' : 'solid-btn' %>"
-  >
-    <%= i %>
-  </a>
-  <% } %> <% } %> <% } %>
+  <% } %>
 
   <a
-    href="<%= nextPage %>"
-    class="col btn search-paginate-link <%= currentPage == maxNumPages ? 'disabled' : '' %>"
+    href="/search/page-<%= currentPage %>/?s=<%= searchPhrase %>"
+    class="btn search-paginate-link active"
   >
-    Next
+    <%= currentPage %>
   </a>
+
+  <a
+    href="/search/page-<%= currentPage + 1 %>/?s=<%= searchPhrase %>"
+    class="btn search-paginate-link <%= currentPage + 1 > maxNumPages ? 'hidden' : 'solid-btn' %>"
+  >
+    <%= currentPage + 1 %>
+  </a>
+
+  <a
+    href="/search/page-<%= currentPage + 2 %>/?s=<%= searchPhrase %>"
+    class="btn search-paginate-link <%= currentPage + 2 > maxNumPages ? 'hidden' : 'solid-btn' %>"
+  >
+    <%= currentPage + 2 %>
+  </a>
+
+  <a
+    href="/search/page-<%= currentPage + 3 %>/?s=<%= searchPhrase %>"
+    class="btn search-paginate-link <%= currentPage + 3> maxNumPages ? 'hidden' : 'solid-btn' %>"
+  >
+    <%= currentPage + 3 %>
+  </a>
+
+  <a
+    href="/search/page-<%= currentPage + 4 %>/?s=<%= searchPhrase %>"
+    class="btn search-paginate-link <%= currentPage + 4 > maxNumPages ? 'hidden' : 'solid-btn' %>"
+  >
+    <%= currentPage + 4 %>
+  </a>
+
+  <a
+    href="/search/page-<%= currentPage + 5 %>/?s=<%= searchPhrase %>"
+    class="btn search-paginate-link <%= currentPage + 5 > maxNumPages ? 'hidden' : 'solid-btn' %>"
+  >
+    <%= currentPage + 5 %>
+  </a>
+
+  <a
+    href="<%= currentPage + 6 %>/?s=<%= searchPhrase %> "
+    class="btn search-paginate-link <%= currentPage + 6 > maxNumPages ? 'hidden' : 'solid-btn' %>"
+    >Next</a
+  >
 </div>

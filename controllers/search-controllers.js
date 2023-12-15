@@ -5,7 +5,7 @@ const client = new MongoClient(uri)
 const database = 'blogs'
 const collection = 'posts'
 
-const resultsPerPage = 3
+const resultsPerPage = 1
 
 async function getAllResults(searchPhrase) {
   try {
@@ -50,12 +50,8 @@ async function searchBlogs(req, res, next) {
 
   if (totalResults > resultsPerPage) {
     searchResults.splice(resultsPerPage)
-    prevPage = ''
-    nextPage = '/search/page=2'
     maxNumPages = Math.ceil(totalResults / resultsPerPage)
   } else {
-    prevPage = ''
-    nextPage = ''
     maxNumPages = 1
   }
 
@@ -63,9 +59,8 @@ async function searchBlogs(req, res, next) {
     results: searchResults,
     pageTitle: pageTitle,
     currentPage: 1,
-    prevPage: prevPage,
-    nextPage: nextPage,
     maxNumPages: maxNumPages,
+    searchPhrase: searchPhrase,
   })
 }
 
@@ -87,6 +82,7 @@ async function searchMoreBlogs(req, res, next) {
   } else {
     totalResults = searchResults.length
     maxNumPages = Math.ceil(totalResults / resultsPerPage)
+    console.log(maxNumPages)
   }
 
   if (pageNum > maxNumPages) {
@@ -95,30 +91,21 @@ async function searchMoreBlogs(req, res, next) {
     return
   }
 
-  if (pageNum == 2) {
-    prevPage = '/search'
-  } else {
-    prevNum = pageNum - 1
-    prevPage = `/search/page=${prevNum}`
-  }
-
-  nextNum = pageNum + 1
-  nextPage = `/search/page=${nextNum}`
-
-  //console.log(`Found ${totalResults} Matching Blog Posts.`)
   pageTitle = `${totalResults} Search Results for "${searchPhrase}"`
 
   const start = (pageNum - 1) * resultsPerPage
+  console.log(start)
   const end = start + resultsPerPage
+  console.log(end)
   const slicedResults = searchResults.slice(start, end)
+  console.log(`Found ${slicedResults.length} Matching Blog Posts.`)
 
   res.render('search', {
     results: slicedResults,
     pageTitle: pageTitle,
     currentPage: pageNum,
-    prevPage: prevPage,
-    nextPage: nextPage,
     maxNumPages: maxNumPages,
+    searchPhrase: searchPhrase,
   })
 }
 

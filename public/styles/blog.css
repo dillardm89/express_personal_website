@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 #blog-hero p {
   padding-left: 5%;
   padding-right: 5%;
@@ -69,7 +73,15 @@
   white-space: nowrap;
 }
 
-.blog-paginate-link a:hover,
-.search-paginate-link a:hover {
+.blog-paginate-link a:hover {
   color: orange;
+}
+
+.search-paginate-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-paginate-link {
+  padding: 5px 15px 5px 15px;
 }
