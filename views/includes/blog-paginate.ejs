@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between">
+  <% if (prevBlog !== null) { %>
+  <div class="blog-paginate-link">
+    <a href="/<%= prevBlog.urlTitle %>">
+      Previous Post: <%= prevBlog.title %>
+    </a>
+  </div>
+  <% } else { %>
+  <div class="blog-paginate-link"></div>
+
+  <% } %> <% if (nextBlog !== null) { %>
+  <div class="blog-paginate-link">
+    <a href="/<%= nextBlog.urlTitle %>"> Next Post: <%= nextBlog.title %> </a>
+  </div>
+  <% } else { %>
+  <div class="blog-paginate-link"></div>
+  <% } %>
+</div>

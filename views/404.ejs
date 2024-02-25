@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: 'Page Not Found' }) %>
+
+  <body>
+    <header id="navigation">
+      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+    </header>
+
+    <section
+      class="d-flex align-items-center justify-content-center"
+      id="404-container"
+    >
+      <div class="text-center">
+        <h3 class="display-1 fw-bold">404</h3>
+        <p class="fs-3">
+          <span class="text-danger">Oops! </span>Page Not Found
+        </p>
+        <p class="lead">The page you're looking for does not exist.</p>
+      </div>
+      <br />
+    </section>
+
+    <section class="p-4" id="menu">
+      <%- include('includes/menu', { section: '404' }) %>
+    </section>
+
+    <section class="pt-5" id="contact-me">
+      <%- include('includes/connect') %>
+    </section>
+
+    <%- include('includes/foot') %>
+  </body>
+</html>

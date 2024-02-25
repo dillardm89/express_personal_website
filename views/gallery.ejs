@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: 'Gallery - Marianne Dillard' }) %>
+
+  <body>
+    <header id="navigation">
+      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+    </header>
+
+    <section id="gallery-hero">
+      <div class="container mt-3 mb-5 text-center" id="gallery-hero-container">
+        <h2>Gallery</h2>
+        <p>
+          One of my hobbies and joys of life is traveling to experience new
+          people, cultures, and sceneries. Please enjoy some pictures from my
+          travels. I’m excited for the future and all the possibilities for
+          adventure. I plan to expand this collection as my journey continues.
+        </p>
+      </div>
+    </section>
+
+    <section id="gallery-cards">
+      <% for (const image of images) { %> <%-
+      include('includes/gallery-card-item', {image: image}) %> <% } %>
+    </section>
+
+    <section
+      class="container mt-2 mb-3 justify-content-center"
+      id="gallery-paginate-bar"
+    >
+      <%- include('includes/gallery-paginate') %>
+    </section>
+
+    <section class="p-4" id="menu">
+      <%- include('includes/menu', { section: 'gallery' }) %>
+    </section>
+
+    <section class="pt-5" id="contact-me">
+      <%- include('includes/connect') %>
+    </section>
+
+    <%- include('includes/foot') %>
+  </body>
+</html>

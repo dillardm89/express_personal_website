@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: pageTitle }) %>
+
+  <body>
+    <header id="navigation">
+      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+    </header>
+
+    <section class="container mb-4" id="search-results">
+      <div class="pt-5 pb-2 text-center">
+        <h2><%= pageTitle %></h2>
+        <br />
+        <%- include('includes/search-bar') %>
+      </div>
+
+      <div id="search-card">
+        <% if (results !== null) { %> <% for (const result of results) { %> <%-
+        include('includes/search-card', { result: result }) %> <% } %> <% } %>
+      </div>
+    </section>
+
+    <section class="p-4" id="menu">
+      <%- include('includes/menu', { section: 'search' }) %>
+    </section>
+
+    <section class="pt-5" id="contact-me">
+      <%- include('includes/connect') %>
+    </section>
+
+    <%- include('includes/foot') %>
+  </body>
+</html>

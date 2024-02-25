@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: 'Contact Me - Marianne Dillard' })
+  %>
+
+  <body>
+    <header id="navigation">
+      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+    </header>
+
+    <section id="contact-hero">
+      <div class="container mt-3 mb-5 text-center" id="contact-hero-container">
+        <h2>Contact Me</h2>
+        <%- include('includes/contact-form') %>
+      </div>
+    </section>
+
+    <section class="p-4" id="menu">
+      <%- include('includes/menu', { section: 'contact' }) %>
+    </section>
+
+    <section class="pt-5" id="contact-me">
+      <%- include('includes/connect') %>
+    </section>
+
+    <%- include('includes/foot') %>
+  </body>
+</html>

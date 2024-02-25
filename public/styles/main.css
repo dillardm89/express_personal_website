@@ -1,0 +1,145 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+}
+
+body {
+  background-color: #d6e6f2;
+}
+
+.navbar-brand img {
+  border-radius: 50px;
+}
+
+.solid-btn:hover {
+  background-color: #b9d7ea;
+}
+
+.light-btn:hover {
+  background-color: #f7fbfc;
+}
+
+section .btn {
+  background-color: #769fcd;
+}
+
+#navigation li a {
+  font-style: bold;
+  font-weight: 600;
+}
+
+.nav-link {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #333333;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#main-hero {
+  background-image: url(../images/background.jpg);
+  box-shadow: inset 0 0 0 500px rgba(214, 230, 242, 0.2);
+  padding: 100px;
+}
+
+#hero-text-card {
+  background-color: #f7fbfc;
+  border-radius: 50px;
+}
+
+#hero-img-card img {
+  border: solid 10px #333333;
+  border-radius: 50px;
+}
+
+.hide-menu-item {
+  display: none;
+}
+
+#recent-blog-posts {
+  background-color: #b9d7ea;
+}
+
+#menu {
+  background-color: #769fcd;
+}
+
+#menu .card {
+  background-color: #f7fbfc;
+}
+
+.fa-user-large:hover,
+.fa-file-lines:hover,
+.fa-book:hover,
+.fa-file-code:hover,
+.fa-camera:hover,
+#menu-envelope:hover {
+  color: #333333 !important;
+}
+
+#about-me-card,
+#resume-card,
+#blog-card,
+#projects-card,
+#gallery-card,
+#contact-card {
+  height: 100%;
+}
+
+#menu h4 {
+  font-style: bold;
+  font-weight: 600;
+}
+
+#contact-me h2 {
+  font-style: bold;
+  font-weight: 600;
+}
+
+#contact-me .card {
+  background-color: #d6e6f2;
+  border: none;
+}
+
+.fa-map:hover,
+.fa-brands:hover {
+  color: #769fcd !important;
+}
+
+#connect-envelope:hover {
+  color: #769fcd !important;
+}
+
+#blog-card-item img {
+  border-radius: 10px 10px 0px 0px;
+}
+
+#blog-card-item.card {
+  border-radius: 10px !important;
+  text-align: left !important;
+}

@@ -1,0 +1,68 @@
+<nav id="my-navbar" class="navbar fixed-top navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="/" target="_blank">
+      <img
+        src="images/MD-logo-square.jpg"
+        alt="marianne dillard logo image"
+        width="60px"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link btn" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn" href="/about-me">ABOUT ME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn" href="/resume">RESUME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn" href="/blog">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link btn"
+            href="https://www.github.com/dillardm89"
+            target="_blank"
+            >PROJECTS</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn" href="/gallery-1">GALLERY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn" href="/contact-me">CONTACT ME</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<%# Function changes navbar background from transparent to color on scroll %>
+<script>
+  const myNav = document.getElementById('my-navbar')
+  window.onscroll = function () {
+    if (
+      document.body.scrollTop >= 5 ||
+      document.documentElement.scrollTop >= 5
+    ) {
+      myNav.setAttribute('style', 'background-color:#d6e6f2 !important')
+    } else {
+      myNav.setAttribute('style', 'background-color: transparent')
+    }
+  }
+</script>

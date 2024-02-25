@@ -1,0 +1,12 @@
+<div id="blog-post-details">
+  <img
+    src="<%= blog.imageUrl %>"
+    alt="<%= blog.imageText %>"
+    id="blog-post-img"
+  />
+  <div id="blog-post-text">
+    <p><em>by <%= blog.author %> on <%= blog.shortDate %></em></p>
+
+    <%- blogText %>
+  </div>
+</div>

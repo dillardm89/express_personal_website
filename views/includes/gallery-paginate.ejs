@@ -1,0 +1,19 @@
+<a
+  href="/gallery-<%= prevPageNum %>"
+  class="btn gallery-paginate-link <%= currentPageNum == 1 ? 'disabled' : '' %>"
+  >Previous</a
+>
+
+<% for(var i = 1; i <= maxPageNum; i++ ) { %>
+<a
+  href="/gallery-<%= i %>"
+  class="btn gallery-paginate-link <%= currentPageNum == i ? 'active' : 'solid-btn' %>"
+  ><%= i %></a
+>
+<% } %>
+
+<a
+  href="/gallery-<%= nextPageNum %>"
+  class="btn gallery-paginate-link <%= currentPageNum == maxPageNum ? 'disabled' : '' %>"
+  >Next</a
+>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: 'Marianne Dillard' }) %>
+
+  <body>
+    <header id="navigation" style="height: 40px">
+      <%- include('includes/navbar') %>
+    </header>
+
+    <section class="mt-5" id="main-hero">
+      <%- include('includes/home-page-hero') %>
+    </section>
+
+    <section class="p-4" id="menu">
+      <%- include('includes/menu', { section: 'home' }) %>
+    </section>
+
+    <section id="recent-blog-posts">
+      <div class="container pt-5 pb-5 text-center" id="recent-blog-containter">
+        <h2 class="mb-4">Recent Blog Posts</h2>
+
+        <div id="blog-card" class="row row-gap-3 row-flex">
+          <% for (const blog of blogs) { %> <%- include('includes/blog-card', {
+          blog: blog }) %> <% } %>
+        </div>
+
+        <div class="text-center mt-5">
+          <a class="btn light-btn" href="/blog">READ MORE BLOG POSTS</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-5" id="contact-me">
+      <%- include('includes/connect') %>
+    </section>
+
+    <%- include('includes/foot') %>
+  </body>
+</html>

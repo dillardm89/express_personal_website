@@ -1,0 +1,53 @@
+<div id="contact-form-api">
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="<%= apiKey %>" />
+    <input type="hidden" name="from_name" value="Web3 Contact Form" />
+
+    <div class="form-group pb-4">
+      <label for="form-name-field">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="form-name-field"
+        name="name"
+        placeholder="Full Name"
+        required
+      />
+    </div>
+
+    <div class="form-group pb-4">
+      <label for="form-email-field">Email Address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="form-email-field"
+        name="email"
+        placeholder="Ex: mail@email.com"
+        required
+      />
+    </div>
+
+    <input
+      type="hidden"
+      name="subject"
+      value="Message from Web3 Contact Form - Github Website"
+    />
+
+    <div class="form-group pb-4">
+      <label for="form-message-field">Message</label>
+      <textarea
+        class="form-control"
+        id="form-message-field"
+        name="message"
+        placeholder="Enter your message..."
+        required
+      ></textarea>
+    </div>
+
+    <button class="btn solid-btn" type="submit">Send Message</button>
+
+    <input type="hidden" name="redirect" value="http://localhost:3000/" />
+  </form>
+</div>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>

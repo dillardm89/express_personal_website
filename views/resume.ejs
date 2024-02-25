@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head', { pageTitle: 'Resume - Marianne Dillard' }) %>
+
+  <body>
+    <header id="navigation">
+      <%- include('includes/navbar') %> <%- include('includes/slides') %>
+    </header>
+
+    <section id="resume-hero"><%- include('includes/resume-hero') %></section>
+
+    <section id="core-competencies">
+      <%- include('includes/resume-competencies') %>
+    </section>
+
+    <section id="work-experience">
+      <%- include('includes/resume-work') %>
+    </section>
+
+    <section id="education">
+      <%- include('includes/resume-education') %>
+    </section>
+
+    <section id="credentials">
+      <%- include('includes/resume-credentials') %>
+    </section>
+
+    <section id="tech-skills"><%- include('includes/resume-skills') %></section>
+
+    <section class="p-4" id="menu">
+      <%- include('includes/menu', { section: 'resume' }) %>
+    </section>
+
+    <section class="pt-5" id="contact-me">
+      <%- include('includes/connect') %>
+    </section>
+
+    <%- include('includes/foot') %>
+  </body>
+</html>

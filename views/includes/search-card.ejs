@@ -1,0 +1,23 @@
+<div id="search-card-item" class="card mt-3">
+  <div class="card-body">
+    <h4 class="card-title">
+      <a class="card-link" href="/<%= result.urlTitle %>">
+        <strong><%= result.title %></strong>
+      </a>
+    </h4>
+
+    <p class="card-subtitle">
+      <em>by <%= result.author %> on <%= result.shortDate %></em>
+    </p>
+
+    <div class="search-card-text-div mt-2">
+      <p class="card-text"><%= result.excerpt %></p>
+    </div>
+
+    <div class="card-read-more mt-2">
+      <a class="card-link" href="/<%= result.urlTitle %>">
+        Read More <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
