@@ -32,8 +32,8 @@ Personal website using Express and EJS
 
 ### MongoDB
 
-- Create two(2) database/collection names blogs/posts and gallery/images
-- Import data from 'db'files'L blogs.json and images.json
+- Create two (2) database/collection named: blogs/posts and gallery/images
+- Import data from 'db'files': blogs.json and images.json
 
 ### Node_Modules
 
