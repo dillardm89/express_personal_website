@@ -26,3 +26,20 @@ Personal website using Express and EJS
 ### Personal Challenge Goals:
 
 - Recreate styling and functionality similar to personal WordPress website (https://www.mariannedillard.com)
+
+
+## Installation
+
+### MongoDB
+
+- Create two(2) database/collection names blogs/posts and gallery/images
+- Import data from 'db'files'L blogs.json and images.json
+
+### Node_Modules
+
+- 'npm install' to install necessary modules from package.json
+
+### .env Variables Required
+
+- HOST_PORT = 3000
+- WEB3_FORM_API_KEY = 'your_api_token_here'
