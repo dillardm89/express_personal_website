@@ -17,10 +17,9 @@ Personal website using Express and EJS
 - All images used in the website should have appropriate alt text to be accessible
 - Utilize free contact form to email API for Contact page
 - Utilize MongoDB for Gallery and Blog
-- Gallery should include pagination (limit 9 images per page)
+- Gallery should include pagination
 - Viewing individual blog post should include pagination for previous and next blogs
 - Blogs should be searchable by keywords
-- Blog Search page should include pagination (limit 10 results per page)
 
 ### Personal Challenge Goals:
 
