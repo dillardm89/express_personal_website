@@ -9,7 +9,6 @@ Personal website using Express and EJS
 - Update existing pages (Home, About Me, Resume) using EJS, Express.js, and Node.js
 - Expand website adding new Gallery, Contact Form, and Blog pages
 - Update Home page with Most Recent Blogs section
-- Add website to GitHub to continue building portfolio
 
 ### Technical Requirements:
 
